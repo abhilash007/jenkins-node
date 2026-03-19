@@ -17,13 +17,13 @@ pipeline {
         stage('Load Env from YAML') {
             steps {
                 script {
-                    def config = readYaml file: 'config/stage-variables.yml'
+                    def config = readYaml file: 'app/config/stage-variables.yml'
 
                     def envVars = config['dev']['EnvVariables']
-
-                    env.STAGE = envVars.STAGE
-                    env.DB_USER_NAME = envVars.DB_USER_NAME
-                    env.DB_PASSWORD = envVars.DB_PASSWORD
+                    envVars.each { key, value ->
+                        echo "${key} = ${value}"
+                        env[key] = value.toString()
+                    }
 
                     echo "Loaded ENV for dev"
                 }
