@@ -1,0 +1,15 @@
+dev:
+  EnvVariables:
+    STAGE: "dev"
+    DB_USER_NAME: "dev_user"
+    DB_PASSWORD: "dev_password"
+test:
+  EnvVariables:
+    STAGE: "test"
+    DB_USER_NAME: "test_user"
+    DB_PASSWORD: "test_password"
+prod:
+  EnvVariables:
+    STAGE: "prod"
+    DB_USER_NAME: "prod_user"
+    DB_PASSWORD: "prod_password"
