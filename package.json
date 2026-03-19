@@ -2,5 +2,8 @@
   "scripts": {
     "start": "node app/src/index.js",
     "build": "echo build step"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
   }
 }
