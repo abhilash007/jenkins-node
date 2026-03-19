@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "node app/src/index.js",
+    "build": "echo build step"
+  }
+}
