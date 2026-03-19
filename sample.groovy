@@ -1,15 +1,20 @@
 pipeline {
-    agent {
-        node {
-            customWorkspace '/Users/abhilashkv/MyProjects/rd/jenkins-node'
-        }
-    }
+    agent any
 
     tools {
         nodejs 'node-18'
     }
+    environment {
+        DB_USER_NAME = 'TEST123'
+    }
 
     stages {
+
+        stage('Clone Repo') {
+            steps {
+                git branch: 'main', url: 'https://github.com/abhilash007/jenkins-node.git'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
