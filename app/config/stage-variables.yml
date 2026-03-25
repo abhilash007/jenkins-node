@@ -1,9 +1,12 @@
 dev:
   EnvVariables:
     STAGE: dev
+    NAME: Abhilash
 test:
   EnvVariables:
     STAGE: test
+    NAME: Abhilash
 prod:
   EnvVariables:
     STAGE: prod
+    NAME: Abhilash
