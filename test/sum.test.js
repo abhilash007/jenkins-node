@@ -1,20 +1,20 @@
 const { sum } = require('../app/src/index');
-const assert = require('assert');
+const { expect } = require('chai');
 
 describe('Sum function', () => {
     it('should return 5 for 2 + 3', () => {
-        assert.equal(sum(2, 3), 5);
+        expect(sum(2, 3)).to.equal(5);
     });
 
     it('should return 0 for 0 + 0', () => {
-        assert.equal(sum(0, 0), 0);
+        expect(sum(0, 0)).to.equal(0);
     });
 
     it('should return -1 for -2 + 1', () => {
-        assert.equal(sum(-2, 1), -1);
+        expect(sum(-2, 1)).to.equal(-1);
     });
 
     it('should handle floating point numbers', () => {
-        assert.equal(sum(1.5, 2.5), 4);
+        expect(sum(1.5, 2.5)).to.equal(4);
     });
 });
