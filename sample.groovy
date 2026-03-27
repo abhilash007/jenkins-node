@@ -6,7 +6,7 @@ pipeline {
     }
    
     environment {
-        STAGE = 'dev'
+        STAGE='dev'
     }
 
     stages {
@@ -17,28 +17,19 @@ pipeline {
             }
         }
 
-        // stage('Load Env from YAML') {
-        //     steps {
-        //         script {
-        //             def config = readYaml file: 'app/config/stage-variables.yml'
-
-        //             def envVars = config['dev']['EnvVariables']
-        //             envVars.each { key, value ->
-        //                 echo "${key} = ${value}"
-        //                 env[key] = value.toString()
-        //             }
-
-        //             echo "Loaded ENV for dev"
-        //         }
-        //     }
-        // }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
 
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
+    
         stage('Build') {
             steps {
                 sh 'npm run build'

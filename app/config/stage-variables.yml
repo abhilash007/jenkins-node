@@ -1,12 +1,15 @@
 dev:
   EnvVariables:
     STAGE: dev
-    NAME: Abhilash
+    DB_USER_NAME: Abhilash
+    DB_PASSWORD: password123
 test:
   EnvVariables:
     STAGE: test
-    NAME: Abhilash
+    DB_USER_NAME: Abhilash
+    DB_PASSWORD: password123
 prod:
   EnvVariables:
     STAGE: prod
-    NAME: Abhilash
+    DB_USER_NAME: Abhilash
+    DB_PASSWORD: password123
